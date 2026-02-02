@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cal">
+        <h4>Age Calculator</h4>
+        <hr>
+
+        <label for="date">Enter Your Birthdate :-</label>
+        <input type="date" id="date">
+
+        <button type="button" onclick="cal()">
+            <h3>Calculate</h3>
+        </button>
+
+        <hr>
+
+        <div id="result">
+            <p>Your Age is :</p>
+            <h4 id="output"></h4>
+
+            <button type="button" onclick="reset()">
+                <h3>Reset</h3>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

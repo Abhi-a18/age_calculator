@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cal {
+    background: #ffffff;
+    width: 350px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.cal h4 {
+    color: #2563eb;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.cal hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.cal label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.cal input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.cal button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cal button:hover {
+    background: rgb(179, 173, 230);
+}
+
+.cal button h3 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#result {
+    margin-top: 15px;
+}
+
+#result p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+#output {
+    margin: 8px 0 12px;
+    font-size: 16px;    
+    font-weight: 600;
+}
