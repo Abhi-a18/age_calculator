@@ -1,55 +1,56 @@
-function cal() {
-    const dateInput = document.getElementById("date").value;
-    const output = document.getElementById("output");
+function CalculateAge() {
+    const birthDateValue = document.getElementById("birthDate")?.value;
+    const resultElement = document.getElementById("ageResult");
 
-    if (dateInput === "") {
-        output.innerText = "Please enter the date";
+    if (!birthDateValue) {
+        resultElement.innerText = "Please select a valid birth date.";
         return;
     }
 
-    const dob = new Date(dateInput);
+    const birthDate = new Date(birthDateValue);
     const today = new Date();
 
-    // Remove time from today's date
-    today.setHours(0, 0, 0, 0);
-
-    // Future DOB check
-    if (dob > today) {
-        output.innerText = "DOB cannot be in the future";
+    if (isNaN(birthDate.getTime())) {
+        resultElement.innerText = "Invalid date format.";
         return;
     }
 
-    let year = today.getFullYear() - dob.getFullYear();
-    let month = today.getMonth() - dob.getMonth();
-    let day = today.getDate() - dob.getDate();
+    today.setHours(0, 0, 0, 0);
 
-    if (day < 0) {
-        month--;
-        const prevMonthDays = new Date(
+    if (birthDate > today) {
+        resultElement.innerText = "Birth date cannot be in the future.";
+        return;
+    }
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        const previousMonthDays = new Date(
             today.getFullYear(),
             today.getMonth(),
             0
         ).getDate();
-        day += prevMonthDays;
+        days += previousMonthDays;
     }
 
-    if (month < 0) {
-        year--;
-        month += 12;
+    if (months < 0) {
+        years--;
+        months += 12;
     }
 
-    // 🎉 Birthday check (FIXED)
-    if (
-        today.getDate() === dob.getDate() &&
-        today.getMonth() === dob.getMonth()
-    ) {
-        output.innerText = ` Happy Birthday! You are ${year} years old `;
-    } else {
-        output.innerText = `${year} Years, ${month} Months, ${day} Days`;
-    }
+    const isBirthday =
+        today.getDate() === birthDate.getDate() &&
+        today.getMonth() === birthDate.getMonth();
+
+    resultElement.innerText = isBirthday
+        ? `🎉 Happy Birthday! You are ${years} years old 🎂`
+        : `${years} Years, ${months} Months, ${days} Days`;
 }
 
-function reset() {
-    document.getElementById("date").value = "";
-    document.getElementById("output").innerText = "";
+function handleReset() {
+    document.getElementById("birthDate").value = "";
+    document.getElementById("ageResult").innerText = "";
 }
