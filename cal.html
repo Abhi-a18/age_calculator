@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="age-calculator">
+        <h2>Age Calculator</h2>
+        <hr>
+
+        <label for="birthDate">Enter your birth date</label>
+        <input type="date" id="birthDate">
+
+        <button onclick="handleCalculateAge()">Calculate Age</button>
+
+        <div class="result">
+            <p id="ageResult"></p>
+            <button class="reset-btn" onclick="handleReset()">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
